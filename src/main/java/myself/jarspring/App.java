@@ -1,13 +1,12 @@
 package myself.jarspring;
 
-import javax.annotation.Resource;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import myself.jarspring.c.Infomation;
 import myself.jarspring.c.Test2;
+
 
 
 /**
@@ -22,7 +21,13 @@ public class App
 	public static ApplicationContext context;
 	
 	static{
-		context = new ClassPathXmlApplicationContext("spring.xml"); 
+		System.out.println(11111111);
+		try {
+			context = new ClassPathXmlApplicationContext("classpath:spring/spring.xml"); 
+		} catch (Exception e) {
+			System.out.println(2222222);
+			System.out.println(e);
+		}
 	}
 	
     public static void main( String[] args )

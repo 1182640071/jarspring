@@ -11,8 +11,8 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
    
-    <context:component-scan base-package="myself.jarspring.t" />  
-    <context:component-scan base-package="myself.jarspring.c" /> 
+<!--     <context:component-scan base-package="myself.jarspring.t" />  
+ -->    <context:component-scan base-package="myself.jarspring" /> 
     
     <context:mbean-export />
   
