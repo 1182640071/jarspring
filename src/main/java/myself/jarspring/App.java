@@ -19,8 +19,8 @@ public class App
 	
 	static{
 		try {
-			context = new ClassPathXmlApplicationContext("classpath:spring/spring.xml"); 
-//			context = new ClassPathXmlApplicationContext(new String[] {"http://10.20.160.198/wiki/display/dubbo/consumer.xml"});
+//			context = new ClassPathXmlApplicationContext("classpath:spring/spring.xml"); 
+			context = new ClassPathXmlApplicationContext(new String[] {"classpath:spring/spring.xml","classpath:spring/dubbo.xml"});
 		} catch (Exception e) {
 			System.out.println(e);
 		}
