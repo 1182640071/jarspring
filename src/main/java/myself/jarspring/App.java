@@ -1,10 +1,7 @@
 package myself.jarspring;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
-
-import myself.jarspring.c.Infomation;
 import myself.jarspring.c.Test2;
 
 
@@ -18,24 +15,23 @@ import myself.jarspring.c.Test2;
 public class App 
 {
 	
-	public static ApplicationContext context;
+	public static ClassPathXmlApplicationContext context;
 	
 	static{
-		System.out.println(11111111);
 		try {
 			context = new ClassPathXmlApplicationContext("classpath:spring/spring.xml"); 
+//			context = new ClassPathXmlApplicationContext(new String[] {"http://10.20.160.198/wiki/display/dubbo/consumer.xml"});
 		} catch (Exception e) {
-			System.out.println(2222222);
 			System.out.println(e);
 		}
 	}
 	
     public static void main( String[] args )
     {
+    	context.start();
     	Test2 t2 = (Test2) context.getBean("test2");
     	t2.tt();
     	
-    	System.out.println(Infomation.getLogList().size());
     	while(true){
     		try {
 				Thread.sleep(10000);
